@@ -1,0 +1,33 @@
+//Font Size
+$font-size-base: 14px;
+$font-size-heading: 24px;
+$font-size-title: 20px;
+$font-size-subhead: 16px;
+$font-size-caption: 12px;
+
+//Font Syle
+$font-style-base: "Open Sans", sans-serif;
+// $font-style-heading: "Roboto", sans-serif;
+
+//Color
+$color-grey-500: #323435;
+$color-grey-400: #848da4; //body
+$color-grey-300: #f8f9fc; //border
+$color-grey-200: #fbfbfb; //panel table /bg icon
+// $color-grey-100: #fdfdfd;
+
+$color-blue-500: #13131e;
+$color-blue-400: #132141;
+$color-blue-300: #f0f9fd;
+
+$color-red-500: #e36049;
+
+//screen
+$smartphone-tablet: "only screen and (max-width: 768px)";
+$smartphone-non-tablet: "only screen and (max-width: 766px)";
+$smartphone-min: "only screen and (max-width: 375px)";
+$smartphone-tablet-min: "only screen and (min-width: 768px)";
+
+:export {
+  primaryColor: red;
+}

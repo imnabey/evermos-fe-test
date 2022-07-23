@@ -8,6 +8,8 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
+    "bootstrap": "^5.2.0",
+    "lodash": "^4.17.21",
     "next": "latest",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
@@ -19,6 +21,7 @@
     "@types/react": "18.0.9",
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
+    "sass": "^1.54.0",
     "typescript": "4.6.4"
   }
 }
