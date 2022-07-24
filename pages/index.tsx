@@ -72,7 +72,7 @@ function Home({
             <Col className="d-flex align-items-center">
               <Image
                 src="/logo.png"
-                alt="Picture of the author"
+                alt="logo"
                 width={50}
                 height={50}
               />
