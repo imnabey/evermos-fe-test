@@ -46,9 +46,12 @@ In the project directory, you can run:
 ## Project Technologies
 [<img align="left" alt="Sass" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Next.js" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="HTML5" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Typescript" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Eslint" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eslint/eslint-original.svg" style="padding-right:10px;" />]()[<img align="left" alt="Jest" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg" style="padding-right:10px;" />]()[<img align="left" alt="Bootstrap" width="30px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" style="padding-right:10px;" />]()`vercel`.
 
+## Website View
+<img width="700" alt="Screen Shot 2022-07-24 at 23 37 00" src="https://user-images.githubusercontent.com/40421876/180657266-84231819-9c13-4bf0-a0bb-ad06c5038791.png">
 
 ## Deployment
 Deploy this project is using `vercel`. Here's the link https://kitabisa-com-fe-test.vercel.app/
+
 
 
 ## Why using the stack?
