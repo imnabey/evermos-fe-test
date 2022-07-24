@@ -1,4 +1,4 @@
-declare module "*module.css" {
+declare module '*module.css' {
   const styles: {
     [className: string]: string;
   };
@@ -11,6 +11,7 @@ export interface Campaign {
     title: string;
     donation_received: number;
     days_remaining: number;
+    donation_percentage: number;
     // films: string;
     // people: string;
     // planets: string;

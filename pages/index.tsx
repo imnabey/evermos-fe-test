@@ -1,12 +1,21 @@
-import { InferGetStaticPropsType } from "next";
-import Head from "next/head";
-import Image from "next/image";
+// import { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
+import {
+  Row, Col, Card, ProgressBar, Form
+} from 'react-bootstrap';
+import Image from 'next/image';
+import * as CurrencyFormat from 'react-currency-format';
 
-import styles from "@/pages/index.module.scss";
+import '@/pages/index.module.scss';
 // import variables from "@/styles/variables.module.scss";
-import { Campaign } from "../types";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBox,
+  faClock
+} from '@fortawesome/free-solid-svg-icons';
+import { Campaign } from '../types';
 
-import requests from "../utils/requests";
+import requests from '../utils/requests';
 
 interface Props {
   campaigns: Campaign[];
@@ -15,61 +24,122 @@ interface Props {
 
 export const getServerSideProps = async () => {
   const [campaigns] = await Promise.all([
-    fetch(requests.fetchCampaign).then(res => res.json())
+    fetch(requests.fetchCampaign).then((res) => res.json()),
   ]);
 
   return {
     props: {
-      campaigns: campaigns.data
-    }
+      campaigns: campaigns.data,
+    },
   };
 };
 
-const Home = ({
-  campaigns
-}: InferGetStaticPropsType<typeof getServerSideProps>) => {
-  console.log(campaigns, "CEl");
+// var CurrencyFormat = require('react-currency-format');
+
+function Home({
+  campaigns,
+}: Props) {
+
+  const decimalToPercentage = (received: number, target: number) => (
+    Math.floor((received / target) * 100) >= 100 ? 100 : Math.floor((received / target) * 100));
 
   return (
-    <div className={styles.home}>
+    <>
       <Head>
         <title>Kitabisa.com FE Test</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <main>
-        <h1 className="fw-bold">Kitabisa.com</h1>
-        <div className="row">
-          {campaigns.map((campaign: any, index: number) => (
-            <div className="col-sm-4" key={index}>
-              <div className="card">
-                <div className="card-body">
-                  <h5 className="card-title">{campaign.title}</h5>
-                  <p className="card-text">{campaign.donation_received}</p>
-                  <div>{campaign.days_remaining}</div>
-                  <a href="#" className="btn btn-primary"></a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
+      <main className="home">
+        <div className="home__container container">
+          <Row xs={1} md={2} className="mb-30 align-items-center">
+            <Col className="d-flex align-items-center">
+              <Image
+                src="/logo.png"
+                alt="Picture of the author"
+                width={50}
+                height={50}
+              />
+              <h1 className="fw-bold">Kitabisa.com</h1>
+            </Col>
+            <Col className="justify-content-end d-flex">
+              <div>Sorted By:</div>
+              <Form.Select>
+                <option>Donation Goal</option>
+                <option>Day Left</option>
+              </Form.Select>
+              {/* <Dropdown className="btn-dark-custom home__sort-btn btn-no-line">
+                <Dropdown.Toggle id="dropdown-basic">
+                  Dropdown Button
+                </Dropdown.Toggle>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
-    </div>
+                <Dropdown.Menu>
+                  <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                  <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown> */}
+            </Col>
+          </Row>
+
+          <div className="home__item-wrapper border-radius-lg">
+            <div className="d-flex mb-20 align-items-center">
+              <FontAwesomeIcon
+                icon={faBox}
+                className="mr-10 fc-medium-blue fs-base"
+              />
+              Menampilkan
+              {' '}
+              <strong className="ml-5 mr-5 fc-medium-blue">
+                {' '}
+                {campaigns.length}
+                {' '}
+              </strong>
+              {' '}
+              data campaign.
+            </div>
+
+            <Row>
+              {campaigns.map((campaign: any) => (
+                <Col md={4} key={campaign.id} className="home__col-card-item mb-20">
+                  <Card>
+                    <Card.Img variant="top" src={campaign.image.includes('kitabisa-userupload') ? campaign.image : 'https://via.placeholder.com/468x100?text=Visit+Blogging.com+Now'} />
+                    <Card.Body>
+                      <Card.Title className="fs-subhead fw-semibold fc-light-grey">{campaign.title}</Card.Title>
+                      <Card.Text className="fs-title fw-bold mb-10 pb-10">
+                        <CurrencyFormat value={campaign.donation_received} displayType={'text'} thousandSeparator={true} prefix={'Rp.'} />
+                      </Card.Text>
+                      <div className="home__campaign-number-detail">
+                        <Card.Text className="fs-caption fc-light-grey mb-10">
+                          Terkumpul
+                        </Card.Text>
+                        <ProgressBar striped className={`home__progress ${decimalToPercentage(campaign.donation_received, campaign.donation_target) === 100 ? "home__progress--achived" : "home__progress--not-achived"}`} now={decimalToPercentage(campaign.donation_received, campaign.donation_target)} label={`${decimalToPercentage(campaign.donation_received, campaign.donation_target)}%`} />
+                        <div className="border-bottom-light mb-10 mt-10" />
+                        <div className="d-flex align-items-center fs-caption fc-light-grey">
+                          <FontAwesomeIcon
+                            icon={faClock}
+                            className="mr-10 fc-light-grey fs-base"
+                          />
+                          <Card.Text className="mr-5">
+                            {campaign.days_remaining}
+                          </Card.Text>
+                          <Card.Text>
+                            Sisa Hari
+                          </Card.Text>
+                        </div>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </div>
+        </div>
+
+      </main>
+    </>
   );
-};
+}
 
 export default Home;

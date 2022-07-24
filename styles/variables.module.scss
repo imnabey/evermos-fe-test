@@ -10,17 +10,20 @@ $font-style-base: "Open Sans", sans-serif;
 // $font-style-heading: "Roboto", sans-serif;
 
 //Color
-$color-grey-500: #323435;
-$color-grey-400: #848da4; //body
-$color-grey-300: #f8f9fc; //border
-$color-grey-200: #fbfbfb; //panel table /bg icon
+$color-grey-500: #4a4a4a; //body
+$color-grey-400: #989898; //icon/ secondary
+$color-grey-300: #f3f3f3;
+$color-grey-200: #fafafa; //bg color
+// $color-grey-200: #0000001a; /
 // $color-grey-100: #fdfdfd;
 
 $color-blue-500: #13131e;
-$color-blue-400: #132141;
-$color-blue-300: #f0f9fd;
+$color-blue-400: #00aeef;
+$color-blue-300: #e7f5ff;
 
 $color-red-500: #e36049;
+
+$color-pink-500: #d63384;
 
 //screen
 $smartphone-tablet: "only screen and (max-width: 768px)";

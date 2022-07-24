@@ -1,15 +1,64 @@
 {
   "root": true,
-  "extends": ["next/core-web-vitals"],
-  "plugins": ["testing-library"],
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb"
+  ],
+  "plugins": [
+    "testing-library"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": [
+      "warn",
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 200
+      }
+    ],
+    "import/prefer-default-export": "off",
+    "react/react-in-jsx-scope": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "coverage/*",
+    "__tests__/*",
+    "build/*",
+    "**/*.config.js"
+  ],
   "overrides": [
     // Only uses Testing Library lint rules in test files
     {
+      "parserOptions": {
+        "project": [
+          "./tsconfig.json"
+        ]
+      },
       "files": [
         "**/__tests__/**/*.[jt]s?(x)",
-        "**/?(*.)+(spec|test).[jt]s?(x)"
+        "**/?(*.)+(spec|test).[jt]s?(x)",
+        "*.ts",
+        "*.tsx"
       ],
-      "extends": ["plugin:testing-library/react"]
+      "extends": [
+        "plugin:testing-library/react"
+      ]
     }
   ]
 }

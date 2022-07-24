@@ -1,8 +1,17 @@
-import '@/styles/global.css';
+import { AppProps } from 'next/app';
+import SSRProvider from 'react-bootstrap/SSRProvider';
+import { config } from '@fortawesome/fontawesome-svg-core';
+
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import '@/styles/global.scss';
-import 'bootstrap/dist/css/bootstrap.css'
-import type { AppProps } from 'next/app';
+
+config.autoAddCss = false;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <SSRProvider>
+      <Component {...pageProps} />
+    </SSRProvider>
+  );
 }
