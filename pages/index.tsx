@@ -111,7 +111,7 @@ function Home({
                         Target:
                         <CurrencyFormat className="ml-5" value={campaign.donation_target} displayType="text" thousandSeparator prefix="Rp." />
                       </div>
-                      <Card.Img variant="top" src={campaign.image.includes('kitabisa-userupload') ? campaign.image : 'https://via.placeholder.com/468x225?text=No Image'} />
+                      <Card.Img variant="top" src={campaign.image} />
                     </div>
                     <Card.Body>
                       <Card.Title className="fs-subhead fw-semibold fc-light-grey">{campaign.title}</Card.Title>
