@@ -12,10 +12,14 @@ export interface Campaign {
     donation_received: number;
     days_remaining: number;
     donation_percentage: number;
+    donation_target: number;
+    days_remaining: number;
     // films: string;
     // people: string;
     // planets: string;
     // species: string;
     // vehicles: string;
   };
+  donation_target: number;
+  days_remaining: number;
 }

@@ -17,7 +17,15 @@
       }
     }
   }
-  // .home__col-card-item{
-  //   margin-b
-  // }
+
+  .home__card-image{
+    .home__card-image-label{
+      background: #e7f5ff;
+      color: #4a4a4a;
+      padding: 10px 20px;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      right: 0;
+    }
+  }
 }

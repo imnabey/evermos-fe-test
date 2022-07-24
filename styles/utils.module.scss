@@ -15,9 +15,7 @@ h3,
 .h3,
 .h4,
 .h5{
-  // font-family: $font-style-heading;
   font-weight: bold !important;
-  // color: $color-blue-400 !important;
 }
 
 * {
@@ -25,29 +23,10 @@ h3,
 }
 
 main {
-  padding: 5rem 0;
+  padding: 3rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-footer {
-  width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-footer img {
-  margin-left: 0.5rem;
-}
-
-footer a {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -75,10 +54,6 @@ p {
   .card-img-top{
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-  }
-
-  .card-text{
-    // margin-bottom: 0;
   }
 }
 
@@ -135,6 +110,10 @@ p {
   color: $color-grey-500;
 }
 
+.bg-dark-grey {
+  background-color: $color-grey-500;
+}
+
 .fc-light-grey {
   color: $color-grey-400;
 }
@@ -172,4 +151,30 @@ p {
       color: $color-blue-400;
     }
   }
+}
+
+.home__sorting{
+  justify-content: end;
+
+  @media only screen and (max-width: 766px) {
+    padding-top: 10px;
+  }
+}
+
+.home__item-wrapper{
+  @media only screen and (max-width: 375px) {
+    padding: 20px !important;
+  }
+}
+
+.form-select--no-line{
+  border: none;
+  background-color: transparent;
+}
+
+.form-select--grey{
+  border: 1px solid  $color-grey-500;
+  background-color: $color-grey-500;
+  color: white;
+  background: #272a3d url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px !important;
 }

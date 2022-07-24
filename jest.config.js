@@ -14,6 +14,8 @@ const customJestConfig = {
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
 
     '^@/styles/(.*)$': '<rootDir>/styles/$1',
+
+    '^@/helpers/(.*)$': '<rootDir>/styles/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
 };
