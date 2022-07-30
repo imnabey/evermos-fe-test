@@ -11,15 +11,24 @@
     object-fit: cover;
 }
 
-.carouselTextSlide1{
+.carouselTextSlide{
     position: absolute;
     z-index: 10;
     top: 110px;
     left: 30px;
     color: #eee7e8;
+
     @media only screen and (max-width: 412px) {
         top: 0px;
     }  
+}
+
+.carouselTextSlide1{
+    color: #eee7e8;
+}
+
+.carouselTextSlide2{
+    color: #443535;
 }
 
 .carouselBannerButton{

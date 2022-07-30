@@ -10,7 +10,7 @@ import { ICarousel } from 'types';
 
 export const CarouselComponent: FC<ICarousel> = ({ imgSrc, className }) => (
   <Carousel showThumbs={false} swipeable className={className} emulateTouch showStatus={false} showArrows={false}>
-    {imgSrc.map((src) => (
+    {imgSrc.map((src, index) => (
       <Link href={src.urlLink} key={src.uuid}>
         <a>
           <Image
@@ -19,7 +19,7 @@ export const CarouselComponent: FC<ICarousel> = ({ imgSrc, className }) => (
             alt="Line Goods Carousel"
             height={550}
           />
-          <div className={`${styles.carouselText} ${styles.carouselTextSlide1}`}>
+          <div className={`${styles.carouselText} ${index === 0 ? styles.carouselTextSlide1 : styles.carouselTextSlide2} ${styles.carouselTextSlide}`}>
             <div className={styles.carouselTextItem}>
               <div className={`${styles.carouselTextCaption} font-18`}>Exclusive Now</div>
               <h3 className={`${styles.carouselTextTitle} playfair-display font-40 fw-bold mt20 mb25`}>UP TO 35% OFF</h3>
