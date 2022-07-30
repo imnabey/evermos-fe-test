@@ -18,17 +18,15 @@ export function MayLikeProduct(props: any) {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
-  async function getRandomUserListData(param: any) {
+  async function getProductListData(param: any) {
     setIsLoading(true);
     await dispatch<any>(fetchProduct(param));
     setIsLoading(false);
   }
 
   useEffect(() => {
-    getRandomUserListData('maybelline');
+    getProductListData('maybelline');
   }, []);
-
-  // console.log(data, 'productx');
 
   return (
     <div className="mb50">
@@ -42,7 +40,7 @@ export function MayLikeProduct(props: any) {
           <div className="container-loading">
             <Image
               src={LoadingIcon}
-              alt="logo"
+              alt="loading icon linegoods"
               width={100}
               height={100}
             />

@@ -1,6 +1,10 @@
 .carouselTextItem{
     width: 400px;
     word-break: break-word;
+
+    @media only screen and (max-width: 800px) {
+     display: none;
+    }  
 }
 
 .carouselImg{
@@ -13,6 +17,9 @@
     top: 110px;
     left: 30px;
     color: #eee7e8;
+    @media only screen and (max-width: 412px) {
+        top: 0px;
+    }  
 }
 
 .carouselBannerButton{
@@ -22,4 +29,25 @@
     display: inline-block;
     border-radius: 8px;
     line-height: 1.5;
+}
+
+.carouselTextCaption{
+    @media only screen and (max-width: 412px) {
+        font-size: 8px;
+        line-height: 0.5px
+    }  
+}
+
+.carouselTextTitle{
+    @media only screen and (max-width: 412px) {
+        font-size: 8px;
+        line-height: 0.5px;
+    }  
+}
+
+.carouselTextDesc{
+    @media only screen and (max-width: 412px) {
+        font-size: 8px;
+        line-height: 0.5px
+    }  
 }

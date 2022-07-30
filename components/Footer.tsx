@@ -10,11 +10,11 @@ export default function Footer() {
       <div className={styles.footerItem}>
         <div className="container">
           <div className="row">
-            <div className="colMd6">
+            <div className={`colMd6 ${styles.footerLogo}`}>
               <div className={`${styles.footerImageWrap} ${mixins.mb30}`}>
                 <Image
                   src="/logo.png"
-                  alt="logo"
+                  alt="logo linegoods"
                   width={50}
                   height={50}
                 />
@@ -27,7 +27,7 @@ export default function Footer() {
                 Jl. Mawar Melati, Semuanya Indah. Jakarta Selatan. Indonesia
               </div>
             </div>
-            <div className="colMd3">
+            <div className={`colMd3 ${styles.footerSocial}`}>
               <div className="fw-bold">
                 SOCIAL MEDIA
               </div>
@@ -43,7 +43,7 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
-            <div className="colMd3">
+            <div className={`colMd3 ${styles.footerCustomer}`}>
               <div className="fw-bold">
                 CUSTOMER CARE
               </div>

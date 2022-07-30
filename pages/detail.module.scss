@@ -4,14 +4,33 @@
         top: 30px;
         z-index: 10;
         color: #eee7e8;
+
+        @media only screen and (max-width: 540px) {
+            left: 18px;
+            top: 17px
+        }
     }
     .bannerDetailCaption{
         color: #eee7e8;
+
+        @media only screen and (max-width: 540px) {
+            font-size: 8px;
+            line-height: 0.5px;
+        }
     }
     .bannerDetailDesc{
         width: 450px;
         word-wrap: break-word;
+
+        @media only screen and (max-width: 540px) {
+            font-size: 10px;
+            line-height: 15px;
+            width: 200px;
+            margin-bottom: 0;
+        }
+   
     }
+
     .bannerImg{
         border-radius: 8px;
         // object-fit: contain;
@@ -23,6 +42,21 @@
         color: #cf7377;
         display: inline-block;
         border-radius: 8px;
+
+        @media only screen and (max-width: 540px) {
+            padding: 2px 15px;
+            font-size: 8px;
+            position: absolute;
+            top: 5px;
+            right: -115px;
+        }
+
+        @media only screen and (max-width: 375px) {
+            right: -102px;
+        }
+        @media only screen and (max-width: 280px) {
+            display: none;
+        }
     }
 }
 
@@ -38,6 +72,11 @@
     }
     .detailProductTitle{
         font-weight: normal !important;
+
+        @media only screen and (max-width: 412px) {
+            font-size: 25px;
+            line-height: 35px;
+        }
     }
     .detailProductBack{
         color: #a9a5a7;

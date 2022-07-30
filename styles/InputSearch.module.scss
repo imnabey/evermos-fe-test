@@ -1,4 +1,10 @@
 .inputSearch{
+
+  @media only screen and (max-width: 412px) {
+    width: 100%;
+    margin-top: 20px;
+  }
+
   .inputSearchIcon{
     color: #a9a5a7;
     top: 12px;
@@ -12,5 +18,10 @@
     border-radius: 8px;
     border: 1px solid #eee7e8;
     background: #eee7e8;
+
+    @media only screen and (max-width: 412px) {
+      width: 100%;
+      
+    }  
   }
 }

@@ -9,5 +9,17 @@
     border-bottom: 1px solid #eee7e8;
     padding: 20px 0;
     margin-bottom: 50px;
+    margin-top: 50px;
+
+    @media only screen and (max-width: 414px) {
+      margin-top: 10px;
+    }  
+  }
+
+  .homeFilterItem{
+    @media only screen and (max-width: 414px) {
+      justify-content: start;
+      margin-top: 10px;
+    }  
   }
 }

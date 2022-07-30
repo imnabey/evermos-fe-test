@@ -32,7 +32,7 @@ export const selectProduct = (state: AppState) => state.product;
 
 export const fetchProduct = (param: any): AppThunk => async (dispatch: any) => {
   const timeoutPromise = (timeout: number) => new Promise((resolve) => setTimeout(resolve, timeout));
-  const response = await fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=${param}`);
+  const response = await fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline&${param}`);
   const data = await response.json();
 
   await timeoutPromise(1000);

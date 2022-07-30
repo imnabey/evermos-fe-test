@@ -8,7 +8,7 @@ import mixins from '../styles/mixins.module.scss';
 
 import InputSearch from './InputSearch';
 
-export const Navbar: FC<INavbar> = () => {
+export const Navbar: FC<INavbar> = ({ onChange }) => {
   const { asPath } = useRouter();
   const checkIfHomepage = asPath === '/';
 
@@ -16,13 +16,13 @@ export const Navbar: FC<INavbar> = () => {
     <header className={`${navbarStyles.header} container`}>
       <nav className={navbarStyles.navbar}>
         <div className={`${mixins.row}`}>
-          <div className={`${mixins.col} ${mixins.colLg6}`}>
+          <div className={`${mixins.col} ${mixins.colLg6} ${mixins.colSm12}`}>
             <div className={`${mixins.alignItemsCenter} ${mixins.flex}`}>
               <Link href="/" passHref>
                 <a>
                   <Image
                     src="/logo.png"
-                    alt="logo"
+                    alt="logo linegoods"
                     width={50}
                     height={50}
                   />
@@ -33,8 +33,8 @@ export const Navbar: FC<INavbar> = () => {
           </div>
           {checkIfHomepage
             && (
-              <div className={`${mixins.col} ${mixins.colLg6} ${mixins.alignItemsCenter} ${mixins.flex} ${mixins.justifyContentEnd}`}>
-                <InputSearch />
+              <div className={`${mixins.col} ${mixins.colLg6} ${mixins.colSm12} ${mixins.alignItemsCenter} ${mixins.flex} ${mixins.justifyContentEnd}`}>
+                <InputSearch onChange={onChange} />
               </div>
             )}
         </div>

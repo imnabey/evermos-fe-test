@@ -33,17 +33,15 @@ export function DetailProduct(props: any) {
 
   const dispatch = useDispatch();
 
-  async function getRandomUserListData(param: any) {
+  async function getProductDetailData(param: any) {
     setIsLoading(true);
     await dispatch<any>(fetchProductDetail(param));
     setIsLoading(false);
   }
 
   useEffect(() => {
-    getRandomUserListData(urlId);
+    getProductDetailData(urlId);
   }, []);
-
-  // console.log(data.product_colors, 'productdetail');
 
   return (
     <main className={styles.detailProduct}>
@@ -53,7 +51,7 @@ export function DetailProduct(props: any) {
           <div className="container-loading">
             <Image
               src={LoadingIcon}
-              alt="logo"
+              alt="loading icon linegoods"
               width={100}
               height={100}
             />
@@ -61,18 +59,18 @@ export function DetailProduct(props: any) {
         )
         : (
           <div className="row mb50 mt20 detail-product">
-            <div className={`${mixins.colMd4} col`}>
+            <div className={`${mixins.colMd4} ${mixins.colSm12} col`}>
               <div className="text-center">
                 <Image
                   src={data.image_link}
-                  alt="logo"
+                  alt={data.detailProductTitle}
                   className={styles.detailProductImg}
                   height={200}
                   width={180}
                 />
               </div>
             </div>
-            <div className={`${mixins.colMd8} col detail-product__item`}>
+            <div className={`${mixins.colMd8} ${mixins.colSm12} col detail-product__item`}>
               <div className="color-3">{data.brand}</div>
               <h1 className={`${styles.detailProductTitle} font-30 mt10 mb10`}>{data.name}</h1>
               <h2 className="font-30 mt10 mb10">
@@ -119,7 +117,7 @@ export function DetailProduct(props: any) {
           <a>
             <Image
               src={BannerDetail}
-              alt="logo"
+              alt="banner linegoods"
               className={styles.bannerImg}
               height={250}
             />

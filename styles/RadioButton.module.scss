@@ -29,3 +29,16 @@
     position: relative;
     color: #daa0a7;
 }
+
+.radiosContainer{
+    position: relative;
+    overflow-y: hidden;
+    height: 50px;
+    z-index: 11;
+}
+
+.radiosWrap{
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding-bottom: 15px;
+}

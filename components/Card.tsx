@@ -33,7 +33,7 @@ export const Card: FC<ICard> = ({
             (
               <FontAwesomeIcon
                 icon={faHeart}
-                key={star}
+                key={index}
                 className={`${index <= rating ? 'ratingOn' : 'ratingOff'} mr5`}
               />
             ))}

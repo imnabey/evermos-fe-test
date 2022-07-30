@@ -1,19 +1,18 @@
-import React from 'react';
+import { FC } from 'react';
 import styles from '@/styles/Select.module.scss';
-// import mixins from '@/styles/mixins.module.scss';
+import { ISelectDropdown } from 'types';
 
-export default function RadioButton() {
-  const sortList = [
-    { id: 1, label: 'Lipstick', value: 'lipstick' },
-    { id: 2, label: 'Blush', value: 'blush' },
-    { id: 3, label: 'Bronzer', value: 'bronzer' },
-    { id: 4, label: 'Eyeshadow', value: 'eyeshadow' },
-    { id: 5, label: 'Nail Polish', value: 'nailpolish' },
-    { id: 6, label: 'Lip Liner', value: 'lipliner' },
-  ];
+const sortList = [
+  { id: 3, label: 'Rating Filter', value: '' },
+  { id: 1, label: 'Rating Greater Than 3', value: '3' },
+  { id: 2, label: 'Rating Greater Than 1', value: '1' },
+];
 
+export const SelectComponent: FC<ISelectDropdown> = ({
+  onChange
+}) => {
   return (
-    <select className={styles.select} value="">
+    <select className={styles.select} onChange={onChange}>
       {
         sortList.map((list) => (
           <option value={list.value} key={list.id}>{list.label}</option>
@@ -22,3 +21,5 @@ export default function RadioButton() {
     </select>
   );
 }
+
+export default SelectComponent;
