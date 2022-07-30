@@ -3,9 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { ICarousel } from 'types';
+
 import styles from '@/styles/Carousel.module.scss';
-// import '@/styles/Carousel.module.scss';
+
+import { ICarousel } from 'types';
 
 export const CarouselComponent: FC<ICarousel> = ({ imgSrc, className }) => (
   <Carousel showThumbs={false} swipeable className={className} emulateTouch showStatus={false} showArrows={false}>
@@ -13,7 +14,6 @@ export const CarouselComponent: FC<ICarousel> = ({ imgSrc, className }) => (
       <Link href={src.urlLink} key={src.uuid}>
         <a>
           <Image
-            // loader={myLoader}
             className={styles.carouselImg}
             src={src.urlImg}
             alt="Picture of the author"
@@ -27,8 +27,6 @@ export const CarouselComponent: FC<ICarousel> = ({ imgSrc, className }) => (
               <div className={`${styles.carouselBannerButton} fw-bold fs-25`}>SHOP NOW</div>
             </div>
           </div>
-          {/* <img src={Carousel1} alt="image1" /> */}
-          {/* <p className="legend">Image 1</p> */}
         </a>
       </Link>
 

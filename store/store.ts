@@ -1,14 +1,13 @@
 import { configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
+import { Action } from 'redux';
 import productReducer from './productListSlice';
 import productDetailReducer from './productDetailSlice';
-import { Action } from 'redux';
-// import productReducer from './productListSlice
 
 const makeStore = () => configureStore({
   reducer: {
     product: productReducer,
-    detail: productDetailReducer
+    detail: productDetailReducer,
   },
   devTools: true,
 });
@@ -21,5 +20,6 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action
 >;
+// export type AppDispatch = typeof store.dispatch;
 
 export const wrapper = createWrapper<AppStore>(makeStore);

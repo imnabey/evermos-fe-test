@@ -8,18 +8,17 @@ import mixins from '../styles/mixins.module.scss';
 
 import InputSearch from './InputSearch';
 
-
-export const Navbar: FC<INavbar> = ({ isOpen, openFunc }) => {
+export const Navbar: FC<INavbar> = () => {
   const { asPath } = useRouter();
-  const checkIfHomepage = asPath === "/";
+  const checkIfHomepage = asPath === '/';
+
   return (
     <header className={`${navbarStyles.header} container`}>
       <nav className={navbarStyles.navbar}>
-        {/* <a className={navbarStyles.navlogo}>[BrandLogo]</a> */}
         <div className={`${mixins.row}`}>
           <div className={`${mixins.col} ${mixins.colLg6}`}>
             <div className={`${mixins.alignItemsCenter} ${mixins.flex}`}>
-              <Link href="/">
+              <Link href="/" passHref>
                 <a>
                   <Image
                     src="/logo.png"
@@ -32,41 +31,16 @@ export const Navbar: FC<INavbar> = ({ isOpen, openFunc }) => {
               <div className="playfair-display">LineGoods</div>
             </div>
           </div>
-          {checkIfHomepage &&
-            <div className={`${mixins.col} ${mixins.colLg6} ${mixins.alignItemsCenter} ${mixins.flex} ${mixins.justifyContentEnd}`}>
-              <InputSearch />
-            </div>
-          }
+          {checkIfHomepage
+            && (
+              <div className={`${mixins.col} ${mixins.colLg6} ${mixins.alignItemsCenter} ${mixins.flex} ${mixins.justifyContentEnd}`}>
+                <InputSearch />
+              </div>
+            )}
         </div>
-
-        {/* <ul className={isOpen ? `${navbarStyles.navmenu} ${navbarStyles.active}` : navbarStyles.navmenu}>
-        <li className={navbarStyles.navitem}>
-          <Link href="/" className={navbarStyles.navlink}>
-            <a>
-              Home
-            </a>
-          </Link>
-        </li>
-        <li className={navbarStyles.navitem}>
-          <Link href="/about" className={navbarStyles.navlink}>
-            <a>
-              About
-            </a>
-          </Link>
-        </li>
-        <li className={navbarStyles.navitem}>
-          <Link href="/" className={navbarStyles.navlink}>Contact</Link>
-        </li>
-      </ul>
-      <button className={isOpen ? `${navbarStyles.hamburger} ${navbarStyles.active}` : navbarStyles.hamburger} onClick={openFunc}>
-        <span className={navbarStyles.bar} />
-        <span className={navbarStyles.bar} />
-        <span className={navbarStyles.bar} />
-      </button> */}
       </nav>
     </header>
-  )
-
+  );
 };
 
 export default Navbar;

@@ -1,7 +1,8 @@
-import React from 'react'
-import styles from '@/styles/Footer.module.scss';
+import React from 'react';
 import Image from 'next/image';
+
 import mixins from '@/styles/mixins.module.scss';
+import styles from '@/styles/Footer.module.scss';
 
 export default function Footer() {
   return (
@@ -48,7 +49,7 @@ export default function Footer() {
               </div>
               <ul className="list-unstyled font-14">
                 <li className={`${mixins.mb15}`}>
-                  <div className={`fw-bold`}>
+                  <div className="fw-bold">
                     Whatshapp
                   </div>
                   08883123214
@@ -71,5 +72,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

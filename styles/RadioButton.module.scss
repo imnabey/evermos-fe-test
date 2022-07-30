@@ -1,14 +1,6 @@
-// .radios label {
-	
-// }
-
 .radios{
     padding: 10px 0;
 }
-
-// .radios label + label {
-// 	// margin-left: 15px;
-// }
 
 .radiosInput[type="radio"] {
 	opacity: 0; /* hidden but still tabable */
@@ -16,8 +8,6 @@
 }
 
 .radiosInput[type="radio"] + span {
-	// font-family: 'Material Icons';
-	// color: #B3CEFB;
 	border-radius: 8px;
     padding: 10px 20px;
 	transition: all 0.4s;
@@ -39,7 +29,3 @@
     position: relative;
     color: #daa0a7;
 }
-
-// .radiosText{
-
-// }
