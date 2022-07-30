@@ -34,6 +34,7 @@
   .cardImage{
     display: flex;
     justify-content: center;
+    object-fit: contain;
 
     .cardImageItem{
       max-width: 100%;

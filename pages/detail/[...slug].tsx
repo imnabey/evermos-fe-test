@@ -63,12 +63,13 @@ export function DetailProduct(props: any) {
           <div className="row mb50 mt20 detail-product">
             <div className={`${mixins.colMd4} col`}>
               <div className="text-center">
-                {/* <img
+                <Image
                   src={data.image_link}
                   alt="logo"
-                  className="detail-product__img"
-                  height={210}
-                /> */}
+                  className={styles.detailProductImg}
+                  height={200}
+                  width={180}
+                />
               </div>
             </div>
             <div className={`${mixins.colMd8} col detail-product__item`}>

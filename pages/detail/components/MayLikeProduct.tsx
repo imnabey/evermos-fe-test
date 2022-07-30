@@ -25,10 +25,10 @@ export function MayLikeProduct(props: any) {
   }
 
   useEffect(() => {
-    getRandomUserListData('blush');
+    getRandomUserListData('maybelline');
   }, []);
 
-  // console.log(data, 'product');
+  // console.log(data, 'productx');
 
   return (
     <div className="mb50">
@@ -69,7 +69,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
   (store: any) => async ({ query }: any) => {
     const productData = query.data || 'page data';
 
-    await store.dispatch(fetchProduct('blush'));
+    await store.dispatch(fetchProduct('maybelline'));
 
     return {
       props: {
