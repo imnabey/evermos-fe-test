@@ -1,3 +1,6 @@
+
+//---------------------------------------------------------------------
+
 // margin and padding values array
 $space-values: (0, 3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50) !default;
 
@@ -18,7 +21,7 @@ $space-prefixes: (
 @mixin make-spaces() {
   @each $attr-short, $attr-long in $space-prefixes {
     @each $value in $space-values {
-      .#{$attr-short}-#{$value} {
+      .#{$attr-short}#{$value} {
         #{$attr-long}: #{$value}#{"px"};
       }
     }
@@ -26,3 +29,271 @@ $space-prefixes: (
 }
 
 @include make-spaces();
+
+//----------------------------------------------------------------------
+
+@mixin just-align($prop,$arr) {
+  @each $mod, $dir in $arr {
+      &#{$mod} {
+          #{$prop}: #{$dir};
+      }
+  }
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex {
+  @include flexbox;
+}
+
+.alignItems{
+  $align-positions: (
+    Start: flex-start,
+    End: flex-end,
+    Center: center,
+    Stretch: stretch,
+    Baseline: baseline
+  );
+
+  @include just-align('align-items', $align-positions);
+}
+
+.justifyContent{
+  $justify-positions: (
+    Start: flex-start,
+    End: flex-end,
+    Center: center,
+    Around: space-around,
+    Between: space-between,
+    Evenly: space-evenly
+  );
+
+  @include just-align('justify-content', $justify-positions);
+}
+
+$justify-positions: (
+  start: flex-start,
+  end: flex-end,
+  center: center,
+  around: space-around,
+  between: space-between,
+  evenly: space-evenly
+);
+
+// Set the grid defaults
+// -----------------------------------------------------------------------------
+$column-count: 12 !default;
+$gutter-size: 0.5rem !default;
+$medium: 40em; //640px
+$large: 64em; //1024px
+
+// Find the width of 1 column, based upon the column count
+// -----------------------------------------------------------------------------
+@function find_column_width($columns: $column-count) {
+  $column-width: (100% / $columns);
+
+  @return $column-width;
+}
+
+// Create a grid container to house the columns
+// -----------------------------------------------------------------------------
+@mixin grid($nested: false, $gutters: true) {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
+
+  @if $nested {
+    flex: 0 1 auto;
+  }
+
+  @if $gutters {
+    > * {
+      padding-left: $gutter-size;
+      padding-right: $gutter-size;
+      box-sizing: border-box;
+    }
+  }
+}
+
+// Create a column of the grid
+// -----------------------------------------------------------------------------
+@mixin column($columns: 0, $md: null, $lg: null) {
+  $width: find_column_width();
+  $flex-basis: $width * $columns;
+
+  // Setting $columns = 0 will set the column to be auto width and fill available space
+  @if ($columns == 0) {
+    flex: 1 0 0;
+    width: auto;
+  } @else {
+    flex: 0 0 $flex-basis;
+    min-width: $flex-basis;
+  }
+
+  // Set the column width on medium screens
+  @if ($md != null) {
+    @media screen and (min-width: $medium) {
+      $flex-basis: $width * $md;
+      @if ($md == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+
+  // Set the column width on large screens
+  @if ($lg != null) {
+    @media screen and (min-width: $large) {
+      $flex-basis: $width * $lg;
+      @if ($lg == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+}
+
+// Create a column for a specific breakpoint
+// Never needed if purely using grid as mixins
+// -----------------------------------------------------------------------------
+@mixin mq-column($breakpoint: 'md', $columns: 0) {
+  $width: find_column_width();
+  $flex-basis: $width * $columns;
+
+  @if ($breakpoint == 'lg') {
+    @media screen and (min-width: $large) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  } @else {
+    @media screen and (min-width: $medium) {
+      @if ($columns == 0) {
+        flex: 1 0 0;
+        width: auto;
+      } @else {
+        flex: 0 0 $flex-basis;
+        min-width: $flex-basis;
+      }
+    }
+  }
+}
+
+
+.row {
+  @include grid();
+}
+
+.col {
+  @include column();
+}
+
+// Make some base columns
+@for $i from 1 through 12 {
+  .colSm#{$i} {
+    @include column($i);
+  }
+}
+
+// Make some base columns for medium
+@for $i from 1 through 12 {
+  .colMd#{$i} {
+    @include mq-column('md', $i);
+  }
+}
+
+// Make some base columns for large
+@for $i from 1 through 12 {
+  .colLg#{$i} {
+    @include mq-column('lg', $i);
+  }
+}
+
+// 
+@function pxToRem($pxSize) {
+  @return $pxSize / 16 + rem;
+}
+
+@mixin font-size() {
+  @for $size from 12 through 64 {
+    .font-#{$size} {
+      font-size: pxToRem($size);
+      line-height: $size + 10 + px;
+    }
+  }
+}
+
+@include font-size();
+
+// -----------
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+  xs: 0,
+  // Small screen / phone
+  sm: 576px,
+  // Medium screen / tablet
+  md: 768px,
+  // Large screen / desktop
+  lg: 992px,
+  // Extra large screen / wide desktop
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$def: 320px;
+
+$xs: 23.5em;    // 376px @media (max-width: $xs) {}
+
+$sm: 36em;      // (min-width: 576px)
+$md: 48em;      // (min-width: 768px)
+$lg: 62em;      // (min-width: 992px)
+$gl: 64em;      //! gap `lg - xl` (min-width: 1024px)
+$xl: 5em;      // (min-width: 1200px)
+
+//- to container
+
+$col-sm: 540px;  // (max-width: 540px)
+$col-md: 720px;  // (max-width: 720px)
+$col-lg: 960px;  // (max-width: 960px)
+$col-xl: 1140px; // (max-width: 1140px)
+
+$breakpoints: (
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl
+);
+
+@mixin mq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}

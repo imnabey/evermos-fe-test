@@ -1,0 +1,81 @@
+.card * {
+  display: block;
+  box-sizing: border-box;
+}
+
+.cardBadge{
+  background: #cf7377;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  color: #eee7e8;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardCaption{
+  color: #a9a5a7;
+}
+
+.cardButtonOverlay{
+  display: none;
+}
+
+.card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+  margin: 20px;
+  cursor: pointer;
+
+  .cardImage{
+    display: flex;
+    justify-content: center;
+
+    .cardImageItem{
+      max-width: 100%;
+    }
+  }
+
+  .cardTitle{
+    font-weight: 400 !important;
+    margin: 0;
+    padding: 0;
+    display: -webkit-box;
+    max-width: 250px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .cardSubtitle{
+    margin-top: 5px;
+    padding: 0;
+  }
+
+  .cardIntro{
+    margin-bottom: 0;
+    color: #a9a5a7;
+  }
+
+  .cardFooter{
+    padding: 20px;
+    border-top: 1px solid #ddd;
+  }
+}
+
+.card:hover .cardButtonOverlay {
+  display: block;
+  text-align: center;
+  background: rgb(207, 115, 119, .8);
+  color: #eee7e8;
+  position: absolute;
+  padding: 5px;
+  z-index: 100;
+  top: 30%;
+  width: 100%;
+  border-radius: 3px;
+}

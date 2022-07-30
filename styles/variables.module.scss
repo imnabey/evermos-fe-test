@@ -1,29 +1,39 @@
 //Font Size
-$font-size-base: 14px;
-$font-size-heading: 24px;
-$font-size-title: 20px;
-$font-size-subhead: 16px;
-$font-size-caption: 12px;
+// $font-size-base: 14px;
+// $font-size-heading: 24px;
+// $font-size-title: 20px;
+// $font-size-subhead: 16px;
+// $font-size-caption: 12px;
 
 //Font Syle
 $font-style-base: "Open Sans", sans-serif;
-// $font-style-heading: "Roboto", sans-serif;
+$font-style-heading: 'Playfair Display', serif;
 
 //Color
-$color-grey-500: #4a4a4a; //body
-$color-grey-400: #989898; //icon/ secondary
-$color-grey-300: #f3f3f3;
-$color-grey-200: #fafafa; //bg color
-// $color-grey-200: #0000001a; /
-// $color-grey-100: #fdfdfd;
+// $color-grey-500: #4a4a4a; //body
+// $color-grey-400: #989898; //icon/ secondary
+// $color-grey-300: #f3f3f3;
+// $color-grey-200: #fafafa; //bg color
+// // $color-grey-200: #0000001a; /
+// // $color-grey-100: #fdfdfd;
 
-$color-blue-500: #13131e;
-$color-blue-400: #00aeef;
-$color-blue-300: #e7f5ff;
+// $color-blue-500: #13131e;
+// $color-blue-400: #00aeef;
+// $color-blue-300: #e7f5ff;
 
-$color-red-500: #e36049;
+// $color-red-500: #e36049;
 
-$color-pink-500: #d63384;
+// $color-pink-500: #d63384;
+
+
+$color-1: #eee7e8;
+$color-2: #d4b9c2;
+$color-3: #a9a5a7;
+$color-4: #cf7377;
+$color-5: #daa0a7;
+$color-6: #443535;
+$color-7: #a34446;
+$color-8: #b58882;
 
 //screen
 $smartphone-tablet: "only screen and (max-width: 768px)";
@@ -31,6 +41,4 @@ $smartphone-non-tablet: "only screen and (max-width: 766px)";
 $smartphone-min: "only screen and (max-width: 375px)";
 $smartphone-tablet-min: "only screen and (min-width: 768px)";
 
-:export {
-  primaryColor: red;
-}
+

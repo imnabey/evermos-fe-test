@@ -1,0 +1,45 @@
+// .radios label {
+	
+// }
+
+.radios{
+    padding: 10px 0;
+}
+
+// .radios label + label {
+// 	// margin-left: 15px;
+// }
+
+.radiosInput[type="radio"] {
+	opacity: 0; /* hidden but still tabable */
+	position: absolute;
+}
+
+.radiosInput[type="radio"] + span {
+	// font-family: 'Material Icons';
+	// color: #B3CEFB;
+	border-radius: 8px;
+    padding: 10px 20px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+}
+
+.radiosInput[type="radio"]:checked + span {
+	color: #eee7e8;
+    background-color: #daa0a7;
+}
+
+.radiosInput[type="radio"]:focus + span {
+	color: #eee7e8;
+}
+
+.radiosLabel{
+    padding-right: 20px;
+    cursor: pointer;
+    position: relative;
+    color: #daa0a7;
+}
+
+// .radiosText{
+
+// }

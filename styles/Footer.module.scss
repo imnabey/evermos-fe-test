@@ -1,0 +1,15 @@
+.footer{
+    margin-top: 50px;
+    
+    .footerItem{
+        padding: 50px 0;    
+        background: #eee7e8;
+    }
+    .footerImageWrap{
+        display: flex;
+        align-items: center;
+    }
+    .footerCopyright{
+        padding: 10px 0 20px 0;
+    }
+}

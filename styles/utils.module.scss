@@ -3,8 +3,11 @@ body {
   padding: 0;
   margin: 0;
   font-family: $font-style-base;
-  font-size: $font-size-subhead;
+  // font-size: $font-size-subhead;
+  color: #443535;
   line-height: 24px;
+  // background-image: url("../assets/images/logo-bg.jpg");
+  // background-repeat: no-repeat, repeat;
 }
 
 h1,
@@ -16,19 +19,66 @@ h3,
 .h4,
 .h5{
   font-weight: bold !important;
+  // font-family: $font-style-heading;
+}
+
+.open-sans{
+  font-family: $font-style-base;
+}
+
+.playfair-display{
+    font-family: $font-style-heading;
+}
+
+.container{
+  max-width: 1280px;
+}
+
+.container-loading{
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-root{
+  line-height: 0;
+}
+.carousel-slider{
+  border-radius: 8px;
+
+  .control-dots{
+    margin: 30px 0 !important;
+  }
 }
 
 * {
   box-sizing: border-box;
 }
 
-main {
-  padding: 3rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+// main {
+//   // padding: 10px 0;
+//   // flex: 1;
+//   // display: flex;
+//   // flex-direction: column;
+//   // justify-content: center;
+//   // align-items: center;
+// }
+
+.fw-bolder{
+  font-weight: 900;
+}
+
+.fw-bold{
+  font-weight: 700;
+}
+
+.fw-medium{
+  font-weight: 500;
+}
+
+.fw-normal{
+  font-weight: 400;
 }
 
 a {
@@ -41,7 +91,7 @@ p {
 }
 
 .card{
-  border-color: $color-grey-300;
+  // border-color: $color-grey-300;
   border-radius: 15px;
 
   .card-body{
@@ -59,18 +109,18 @@ p {
 
 .home__progress--not-achived{
   .progress-bar{
-    background-color: $color-grey-500;
+    // background-color: $color-grey-500;
   }
 }
 
 .home__progress--achived{
   .progress-bar{
-    background-color: $color-pink-500;
+    // background-color: $color-pink-500;
   }
 }
 
 .border-bottom-light{
-  border-bottom: 1px solid $color-grey-300;
+  // border-bottom: 1px solid $color-grey-300;
 }
 
 .border-radius-lg{
@@ -82,99 +132,201 @@ p {
 }
 
 .fs-heading {
-  font-size: $font-size-heading;
+  // font-size: $font-size-heading;
   line-height: 34px;
 }
 
 .fs-title {
-  font-size: $font-size-title;
+  // font-size: $font-size-title;
   line-height: 30px;
 }
 
 .fs-subhead {
-  font-size: $font-size-subhead;
+  // font-size: $font-size-subhead;
   line-height: 24px;
 }
 
 .fs-base {
-  font-size: $font-size-base;
+  // font-size: $font-size-base;
   line-height: 20px;
 }
 
 .fs-caption {
-  font-size: $font-size-caption;
+  // font-size: $font-size-caption;
   line-height: 16px;
 }
 
 .fc-dark-grey {
-  color: $color-grey-500;
+  // color: $color-grey-500;
 }
 
 .bg-dark-grey {
-  background-color: $color-grey-500;
+  // background-color: $color-grey-500;
 }
 
 .fc-light-grey {
-  color: $color-grey-400;
+  // color: $color-grey-400;
 }
 
 .fc-medium-blue{
-  color: $color-blue-400;
+  // color: $color-blue-400;
 }
 
 .btn-dark-custom{
   .btn-primary{
-    background: $color-grey-500;
-    border-color: $color-grey-500;
+    // background: $color-grey-500;
+    // border-color: $color-grey-500;
     font-size: 16px;
 
     &:hover,
     &:focus{
       box-shadow: none;
-      background: $color-blue-400;
-      border-color:$color-blue-400;
+      // background: $color-blue-400;
+      // border-color:$color-blue-400;
     }
   }
 }
 
-.btn-no-line{
-  .btn-primary{
-    background: transparent;
-    border-color:transparent;
-    color: $color-grey-500;
+// .btn-no-line{
+//   .btn-primary{
+//     background: transparent;
+//     border-color:transparent;
+//     // color: $color-grey-500;
 
-    &:hover,
-    &:focus{
-      box-shadow: none;
-      background: transparent;
-      border-color:transparent;
-      color: $color-blue-400;
-    }
+//     &:hover,
+//     &:focus{
+//       box-shadow: none;
+//       background: transparent;
+//       border-color:transparent;
+//       // color: $color-blue-400;
+//     }
+//   }
+// }
+
+// .home__sorting{
+//   justify-content: end;
+
+//   @media only screen and (max-width: 766px) {
+//     padding-top: 10px;
+//   }
+// }
+
+// .home__item-wrapper{
+//   @media only screen and (max-width: 375px) {
+//     padding: 20px !important;
+//   }
+// }
+
+// .form-select--no-line{
+//   border: none;
+//   background-color: transparent;
+// }
+
+// .form-select--grey{
+//   // border: 1px solid  $color-grey-500;
+//   // background-color: $color-grey-500;
+//   color: white;
+//   background: #272a3d url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px !important;
+// }
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+
+  @include mq(sm) {
+      max-width: $col-sm;
+  }
+
+  @include mq(md) {
+      max-width: $col-md;
+  }
+
+  @include mq(lg) {
+      max-width: $col-lg;
+  }
+
+  @include mq(xl) {
+      max-width: $col-xl;
   }
 }
 
-.home__sorting{
-  justify-content: end;
+.text-right{
+  text-align: right;
+}
 
-  @media only screen and (max-width: 766px) {
-    padding-top: 10px;
+.text-center{
+  text-align: center;
+}
+
+.position-relative{
+  position: relative;
+}
+
+.position-absolute{
+  position: absolute;
+}
+
+.list-unstyled{
+  list-style: none;
+  padding: 0;
+}
+.border-bottom-light{
+  border-bottom: 1px solid #eee7e8;
+}
+.rating{
+  font-size: 12px;
+  display: flex !important;
+  padding: 10px 0;
+}
+
+.ratingOn{
+  color: #cf7377 !important;
+}
+
+.section-title{
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+
+  .border-bottom-light{
+    width: 100%;
+    left: 340px;
+    top: 35px;
   }
 }
 
-.home__item-wrapper{
-  @media only screen and (max-width: 375px) {
-    padding: 20px !important;
-  }
+.color-1{
+  color: $color-1;
 }
 
-.form-select--no-line{
-  border: none;
-  background-color: transparent;
+.color-3{
+  color: $color-3;
 }
 
-.form-select--grey{
-  border: 1px solid  $color-grey-500;
-  background-color: $color-grey-500;
-  color: white;
-  background: #272a3d url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='white' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center/8px 10px !important;
+.color-2{
+  color: $color-2;
+}
+
+.color-4{
+  color: $color-4;
+}
+
+.color-5{
+  color: $color-5;
+}
+
+.color-6{
+  color: $color-6;
+}
+
+.color-7{
+  color: $color-7;
+}
+
+.color-8{
+  color: $color-8;
 }

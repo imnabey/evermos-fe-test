@@ -1,0 +1,48 @@
+.bannerDetailWrap{
+    .bannerDetailText{
+        left: 50px;
+        top: 30px;
+        z-index: 10;
+        color: #eee7e8;
+    }
+    .bannerDetailCaption{
+        color: #eee7e8;
+    }
+    .bannerDetailDesc{
+        width: 450px;
+        word-wrap: break-word;
+    }
+    .bannerImg{
+        border-radius: 8px;
+        // object-fit: contain;
+    }
+
+    .bannerButton{
+        padding: 8px 25px;
+        background: #eee7e8;
+        color: #cf7377;
+        display: inline-block;
+        border-radius: 8px;
+        // line-height: 1.5;
+    }
+}
+.detailProduct{
+    .detailProductColor{
+        height: 30px;
+        width: 30px;
+        // background: red;
+        border-radius: 50%;
+
+        &:hover{
+            border: 2px solid #daa0a7;
+        }
+    }
+    .detailProductTitle{
+        font-weight: normal !important;
+    }
+    .detailProductBack{
+        color: #a9a5a7;
+        display: flex;
+        align-items: center;
+    }
+}
