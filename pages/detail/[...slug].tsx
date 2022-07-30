@@ -81,11 +81,12 @@ export function DetailProduct(props: any) {
               <div className={`${mixins.flex} ${mixins.alignItemsCenter}`}>
                 <div className="rating mr10">
                   {[...Array(5)].map((star, index) => (
-                    <FontAwesomeIcon
-                      icon={faHeart}
-                      key={star}
-                      className={`${index <= data.rating ? 'ratingOn' : 'ratingOff'} mr5`}
-                    />
+                    <div key={star}>
+                      <FontAwesomeIcon
+                        icon={faHeart}
+                        className={`${index <= data.rating ? 'ratingOn' : 'ratingOff'} mr5`}
+                      />
+                    </div>
                   ))}
                 </div>
                 <div className="color-3 font-14">

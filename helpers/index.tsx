@@ -24,7 +24,7 @@ export const removeEmptyAttributes = (objParams: any) => {
   const entries = Object.entries(dataParams);
   for (const [key, value] of entries) {
     if (!value) delete dataParams[key];
-    if (Array.isArray(dataParams[key]) && !value.length) {
+    if (Array.isArray(dataParams[key])) {
       delete dataParams[key];
     }
   }
