@@ -1,4 +1,4 @@
-# Documentation for Evermos FE Test
+# Documentation for Makeup Website
 
 ## You Should Know
 - This project doesn't use any UI Framework, i use mixins sass. Let's make our scss as dry as we can.
