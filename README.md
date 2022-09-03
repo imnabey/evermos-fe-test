@@ -66,12 +66,9 @@ In the project directory, you can run:
 <img width="600" alt="Screen Shot 2022-07-30 at 21 33 03" src="https://user-images.githubusercontent.com/40421876/181919064-9d58e028-7f89-4e08-9566-0a27d110c720.png">
 
 ## Deployment
-Deploy this project is using `vercel`. Here's the link https://evermos-fe-test.vercel.app/.
-
-## SEO Checking
-<img width="600" alt="Screen Shot 2022-07-30 at 21 36 20" src="https://user-images.githubusercontent.com/40421876/181919205-f152edb0-8de2-47d2-bbaf-7a1d3f5b47d5.png">
+Deploy this project is using `vercel`. Here's the link https://line-goods.vercel.app/.
 
 ## Prove for SSR Website
 Can you view the html render from the below link?
 
-view-source:https://evermos-fe-test.vercel.app/
+view-source:https://line-goods.vercel.app/
