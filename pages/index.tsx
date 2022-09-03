@@ -136,10 +136,10 @@ function Home(props: any) {
   return (
     <>
       <Head>
-        <title>Evermos FE Test</title>
+        <title>Line Goods</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Evermos FE Test by Nabilah Ayu Permata" />
+        <meta name="description" content="Line Goods by Nabilah Ayu Permata" />
       </Head>
 
       <NavbarComponent onChange={onInputChange} />
